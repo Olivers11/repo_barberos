@@ -13,7 +13,8 @@ public class interfaz extends javax.swing.JFrame {
     public boolean[] arrayBarberos = new boolean[3];    // Array para verificar los barberos disponibles
     public boolean[] arrayEspera = new boolean[10];      // Array para verificar las sillas disponibles
     public DefaultListModel modelo = new DefaultListModel();
-
+    Object lastValue;
+    Object lastValue2;
     public interfaz() {
         this.setResizable(false);
         initComponents();
@@ -29,6 +30,8 @@ public class interfaz extends javax.swing.JFrame {
         jLabelEspera9.setVisible(false);
         jLabelEspera10.setVisible(false);
         c.start();
+        this.js_atencion1.setValue(4);
+        this.js_atencion2.setValue(10);
     }
 
     @SuppressWarnings("unchecked")
@@ -77,6 +80,8 @@ public class interfaz extends javax.swing.JFrame {
         jLabelEspera8 = new javax.swing.JLabel();
         jLabelEspera9 = new javax.swing.JLabel();
         jLabelEspera10 = new javax.swing.JLabel();
+        js_atencion1 = new javax.swing.JSpinner();
+        js_atencion2 = new javax.swing.JSpinner();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -222,7 +227,21 @@ public class interfaz extends javax.swing.JFrame {
         jLabelEspera10.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imágenes/pensando.png"))); // NOI18N
         jPanel1.add(jLabelEspera10, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 180, -1, -1));
 
-        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 760, 490));
+        js_atencion1.addChangeListener(new javax.swing.event.ChangeListener() {
+            public void stateChanged(javax.swing.event.ChangeEvent evt) {
+                js_atencion1StateChanged(evt);
+            }
+        });
+        jPanel1.add(js_atencion1, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 480, 90, 20));
+
+        js_atencion2.addChangeListener(new javax.swing.event.ChangeListener() {
+            public void stateChanged(javax.swing.event.ChangeEvent evt) {
+                js_atencion2StateChanged(evt);
+            }
+        });
+        jPanel1.add(js_atencion2, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 480, 90, 20));
+
+        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 760, 520));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -233,6 +252,19 @@ public class interfaz extends javax.swing.JFrame {
         c.nuevoProceso();
 
     }//GEN-LAST:event_jButtonAgregarProcesoActionPerformed
+
+    private void js_atencion1StateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_js_atencion1StateChanged
+        if(lastValue != null && !js_atencion1.getValue().equals(lastValue)){
+            lastValue = js_atencion1.getValue();
+        }
+    }//GEN-LAST:event_js_atencion1StateChanged
+
+    private void js_atencion2StateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_js_atencion2StateChanged
+        // TODO add your handling code here:
+        if(lastValue2 != null && !js_atencion2.getValue().equals(lastValue2)){
+            lastValue2 = js_atencion2.getValue();
+        }
+    }//GEN-LAST:event_js_atencion2StateChanged
 
     public int disminuir(int semaforo) {
         semaforo--;
@@ -398,8 +430,12 @@ public class interfaz extends javax.swing.JFrame {
         private int contador = -1;
 
         public void run() {
-            int numeroAleatorio = getRandomNumberInRange(10, 15);
-
+            //int y = Integer.valueOf(js_atencion1.getValue());
+            int x = Integer.valueOf(js_atencion1.getValue().toString());
+            int y = Integer.valueOf(js_atencion2.getValue().toString());
+            System.out.println("x: " + x + " y: " + y);
+            int numeroAleatorio = getRandomNumberInRange(x, y);
+            System.out.println("Tiempo de atencion: " + numeroAleatorio);
             try {
                 Thread.sleep(numeroAleatorio * 1000);
             } catch (InterruptedException ex) {
@@ -776,5 +812,7 @@ public class interfaz extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JSpinner js_atencion1;
+    private javax.swing.JSpinner js_atencion2;
     // End of variables declaration//GEN-END:variables
 }
