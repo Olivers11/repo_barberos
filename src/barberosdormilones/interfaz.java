@@ -2,6 +2,8 @@ package barberosdormilones;
 
 import java.awt.Color;
 import java.util.Random;
+import java.util.Timer;
+import java.util.TimerTask;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.DefaultListModel;
@@ -15,6 +17,7 @@ public class interfaz extends javax.swing.JFrame {
     public DefaultListModel modelo = new DefaultListModel();
     Object lastValue;
     Object lastValue2;
+    public int tiempo_siguiente = 0;
     public interfaz() {
         this.setResizable(false);
         initComponents();
@@ -30,8 +33,32 @@ public class interfaz extends javax.swing.JFrame {
         jLabelEspera9.setVisible(false);
         jLabelEspera10.setVisible(false);
         c.start();
-        this.js_atencion1.setValue(4);
+        this.t_cliente2.setValue(4);
         this.js_atencion2.setValue(10);
+        this.t_cliente1.setValue(3);
+        this.t_cliente2.setValue(10);
+        this.llenarRangoTiempo();
+        this.comenzarAtencion();
+    }
+    
+    public void llenarRangoTiempo(){
+        int x = Integer.valueOf(this.t_cliente1.getValue().toString());
+        int y = Integer.valueOf(this.t_cliente2.getValue().toString());
+        System.out.println("x; " + x + " y: " + y);
+        int n = this.getRandomNumberInRange(x, y);
+        System.out.println("rand: " + n);
+        this.tiempo_siguiente = n;
+    }
+    
+    
+    public void comenzarAtencion(){
+        try {
+            Thread.sleep(this.tiempo_siguiente*1000);
+            c.nuevoProceso();
+        } catch (InterruptedException ex) {
+            Logger.getLogger(interfaz.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        
     }
 
     @SuppressWarnings("unchecked")
@@ -76,13 +103,16 @@ public class interfaz extends javax.swing.JFrame {
         jLabelEspera8 = new javax.swing.JLabel();
         jLabelEspera9 = new javax.swing.JLabel();
         jLabelEspera10 = new javax.swing.JLabel();
-        js_atencion1 = new javax.swing.JSpinner();
+        t_cliente2 = new javax.swing.JSpinner();
         js_atencion2 = new javax.swing.JSpinner();
         label1 = new java.awt.Label();
         label2 = new java.awt.Label();
         tiempo3 = new javax.swing.JLabel();
         tiempo1 = new javax.swing.JLabel();
         tiempo2 = new javax.swing.JLabel();
+        js_atencion3 = new javax.swing.JSpinner();
+        label3 = new java.awt.Label();
+        t_cliente1 = new javax.swing.JSpinner();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -213,12 +243,12 @@ public class interfaz extends javax.swing.JFrame {
         jLabelEspera10.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imágenes/esperaa.png"))); // NOI18N
         jPanel1.add(jLabelEspera10, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 440, -1, -1));
 
-        js_atencion1.addChangeListener(new javax.swing.event.ChangeListener() {
+        t_cliente2.addChangeListener(new javax.swing.event.ChangeListener() {
             public void stateChanged(javax.swing.event.ChangeEvent evt) {
-                js_atencion1StateChanged(evt);
+                t_cliente2StateChanged(evt);
             }
         });
-        jPanel1.add(js_atencion1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 150, 50, 20));
+        jPanel1.add(t_cliente2, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 230, 50, 20));
 
         js_atencion2.addChangeListener(new javax.swing.event.ChangeListener() {
             public void stateChanged(javax.swing.event.ChangeEvent evt) {
@@ -231,8 +261,8 @@ public class interfaz extends javax.swing.JFrame {
         label1.setText("Sala de Espera");
         jPanel1.add(label1, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 340, 130, 30));
 
-        label2.setText("Rango del corte de pelo");
-        jPanel1.add(label2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 120, -1, -1));
+        label2.setText("Tiempo para el siguiente");
+        jPanel1.add(label2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 200, -1, -1));
 
         tiempo3.setText("0");
         jPanel1.add(tiempo3, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 270, -1, -1));
@@ -243,23 +273,44 @@ public class interfaz extends javax.swing.JFrame {
         tiempo2.setText("0");
         jPanel1.add(tiempo2, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 160, -1, -1));
 
+        js_atencion3.addChangeListener(new javax.swing.event.ChangeListener() {
+            public void stateChanged(javax.swing.event.ChangeEvent evt) {
+                js_atencion3StateChanged(evt);
+            }
+        });
+        jPanel1.add(js_atencion3, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 150, 50, 20));
+
+        label3.setText("Rango del corte de pelo");
+        jPanel1.add(label3, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 120, -1, -1));
+
+        t_cliente1.addChangeListener(new javax.swing.event.ChangeListener() {
+            public void stateChanged(javax.swing.event.ChangeEvent evt) {
+                t_cliente1StateChanged(evt);
+            }
+        });
+        jPanel1.add(t_cliente1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 230, 50, 20));
+
         getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 760, 520));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    
+    
     private void jButtonAgregarProcesoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonAgregarProcesoActionPerformed
         // TODO add your handling code here:
 
-        c.nuevoProceso();
 
     }//GEN-LAST:event_jButtonAgregarProcesoActionPerformed
 
-    private void js_atencion1StateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_js_atencion1StateChanged
-        if(lastValue != null && !js_atencion1.getValue().equals(lastValue)){
-            lastValue = js_atencion1.getValue();
+    
+    
+    
+    private void t_cliente2StateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_t_cliente2StateChanged
+        if(lastValue != null && !t_cliente2.getValue().equals(lastValue)){
+            lastValue = t_cliente2.getValue();
         }
-    }//GEN-LAST:event_js_atencion1StateChanged
+    }//GEN-LAST:event_t_cliente2StateChanged
 
     private void js_atencion2StateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_js_atencion2StateChanged
         // TODO add your handling code here:
@@ -267,6 +318,14 @@ public class interfaz extends javax.swing.JFrame {
             lastValue2 = js_atencion2.getValue();
         }
     }//GEN-LAST:event_js_atencion2StateChanged
+
+    private void js_atencion3StateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_js_atencion3StateChanged
+        // TODO add your handling code here:
+    }//GEN-LAST:event_js_atencion3StateChanged
+
+    private void t_cliente1StateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_t_cliente1StateChanged
+        // TODO add your handling code here:
+    }//GEN-LAST:event_t_cliente1StateChanged
 
     public int disminuir(int semaforo) {
         semaforo--;
@@ -432,11 +491,10 @@ public class interfaz extends javax.swing.JFrame {
         private int contador = -1;
 
         public void run() {
-            int x = Integer.valueOf(js_atencion1.getValue().toString());
+            int x = Integer.valueOf(js_atencion3.getValue().toString());
             int y = Integer.valueOf(js_atencion2.getValue().toString());
             //System.out.println("x: " + x + " y: " + y);
             int numeroAleatorio = getRandomNumberInRange(x, y);
-            System.out.println("Tiempo de atencion: " + numeroAleatorio);
             long start = System.currentTimeMillis();
             long seconds = 0;
             while(true){
@@ -458,6 +516,9 @@ public class interfaz extends javax.swing.JFrame {
             
             try {
                 clienteSatisfecho();
+                llenarRangoTiempo();
+                Thread.sleep(tiempo_siguiente*1000);
+                c.nuevoProceso();
             } catch (InterruptedException ex) {
                 Logger.getLogger(interfaz.class.getName()).log(Level.SEVERE, null, ex);
             }
@@ -774,7 +835,7 @@ public class interfaz extends javax.swing.JFrame {
         return 1;
     }
 
-    private static int getRandomNumberInRange(int min, int max) {
+    private  int getRandomNumberInRange(int min, int max) {
         if (min >= max) {
             throw new IllegalArgumentException("max must be greater than min");
         }
@@ -823,10 +884,13 @@ public class interfaz extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JSpinner js_atencion1;
     private javax.swing.JSpinner js_atencion2;
+    private javax.swing.JSpinner js_atencion3;
     private java.awt.Label label1;
     private java.awt.Label label2;
+    private java.awt.Label label3;
+    private javax.swing.JSpinner t_cliente1;
+    private javax.swing.JSpinner t_cliente2;
     private javax.swing.JLabel tiempo1;
     private javax.swing.JLabel tiempo2;
     private javax.swing.JLabel tiempo3;
