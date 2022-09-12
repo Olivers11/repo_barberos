@@ -461,6 +461,22 @@ public class interfaz extends javax.swing.JFrame {
         });
     }
     
+    public class MyThread extends Thread {
+
+        public void run(){
+            llenarRangoTiempo();
+            try {
+                Thread.sleep(tiempo_siguiente*1000);
+                c.nuevoProceso();
+            } catch (InterruptedException ex) {
+                Logger.getLogger(interfaz.class.getName()).log(Level.SEVERE, null, ex);
+            }
+
+        }
+  }
+    
+    
+    
     public class atenderCliente extends Thread {
 
         private int contador = -1;
@@ -472,6 +488,8 @@ public class interfaz extends javax.swing.JFrame {
             int numeroAleatorio = getRandomNumberInRange(x, y);
             long start = System.currentTimeMillis();
             long seconds = 0;
+            MyThread myThread = new MyThread();
+            myThread.start();
             while(true){
                 try {
                     seconds= (System.currentTimeMillis()-start)/1000;
@@ -491,9 +509,7 @@ public class interfaz extends javax.swing.JFrame {
             
             try {
                 clienteSatisfecho();
-                llenarRangoTiempo();
-                Thread.sleep(tiempo_siguiente*1000);
-                c.nuevoProceso();
+                
             } catch (InterruptedException ex) {
                 Logger.getLogger(interfaz.class.getName()).log(Level.SEVERE, null, ex);
             }
