@@ -80,6 +80,9 @@ public class interfaz extends javax.swing.JFrame {
         js_atencion2 = new javax.swing.JSpinner();
         label1 = new java.awt.Label();
         label2 = new java.awt.Label();
+        tiempo3 = new javax.swing.JLabel();
+        tiempo1 = new javax.swing.JLabel();
+        tiempo2 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -187,7 +190,7 @@ public class interfaz extends javax.swing.JFrame {
         jPanel1.add(jLabeLacum1, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 30, 130, 20));
 
         jLabelacum2.setFont(new java.awt.Font("Tw Cen MT Condensed Extra Bold", 0, 12)); // NOI18N
-        jPanel1.add(jLabelacum2, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 140, 130, 20));
+        jPanel1.add(jLabelacum2, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 140, 130, 20));
 
         jLabelacum3.setFont(new java.awt.Font("Tw Cen MT Condensed Extra Bold", 0, 12)); // NOI18N
         jPanel1.add(jLabelacum3, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 240, 130, 20));
@@ -230,6 +233,15 @@ public class interfaz extends javax.swing.JFrame {
 
         label2.setText("Rango del corte de pelo");
         jPanel1.add(label2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 120, -1, -1));
+
+        tiempo3.setText("0");
+        jPanel1.add(tiempo3, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 270, -1, -1));
+
+        tiempo1.setText("0");
+        jPanel1.add(tiempo1, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 50, -1, -1));
+
+        tiempo2.setText("0");
+        jPanel1.add(tiempo2, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 160, -1, -1));
 
         getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 760, 520));
 
@@ -414,23 +426,36 @@ public class interfaz extends javax.swing.JFrame {
             }
         });
     }
-
+    
     public class atenderCliente extends Thread {
 
         private int contador = -1;
 
         public void run() {
-            //int y = Integer.valueOf(js_atencion1.getValue());
             int x = Integer.valueOf(js_atencion1.getValue().toString());
             int y = Integer.valueOf(js_atencion2.getValue().toString());
-            System.out.println("x: " + x + " y: " + y);
+            //System.out.println("x: " + x + " y: " + y);
             int numeroAleatorio = getRandomNumberInRange(x, y);
             System.out.println("Tiempo de atencion: " + numeroAleatorio);
-            try {
-                Thread.sleep(numeroAleatorio * 1000);
-            } catch (InterruptedException ex) {
-                Logger.getLogger(interfaz.class.getName()).log(Level.SEVERE, null, ex);
+            long start = System.currentTimeMillis();
+            long seconds = 0;
+            while(true){
+                try {
+                    seconds= (System.currentTimeMillis()-start)/1000;
+                    Thread.sleep(500);
+                    int tiempo_regresivo = numeroAleatorio -  (int)seconds;
+                    System.out.println("Barbero: " + (contador-1));
+                    if(contador-1 == 0) tiempo1.setText(String.valueOf(tiempo_regresivo));
+                    if(contador-1 == 1)tiempo2.setText(String.valueOf(tiempo_regresivo));
+                    if(contador-1 == 2)tiempo3.setText(String.valueOf(tiempo_regresivo));
+                    if(seconds == numeroAleatorio){
+                        break;
+                    }
+                } catch (InterruptedException e1) {
+                    e1.printStackTrace();
+                }
             }
+            
             try {
                 clienteSatisfecho();
             } catch (InterruptedException ex) {
@@ -802,5 +827,8 @@ public class interfaz extends javax.swing.JFrame {
     private javax.swing.JSpinner js_atencion2;
     private java.awt.Label label1;
     private java.awt.Label label2;
+    private javax.swing.JLabel tiempo1;
+    private javax.swing.JLabel tiempo2;
+    private javax.swing.JLabel tiempo3;
     // End of variables declaration//GEN-END:variables
 }
