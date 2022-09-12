@@ -33,8 +33,8 @@ public class interfaz extends javax.swing.JFrame {
         jLabelEspera9.setVisible(false);
         jLabelEspera10.setVisible(false);
         c.start();
-        this.t_cliente2.setValue(4);
-        this.js_atencion2.setValue(10);
+        this.js_atencion3.setValue(4);
+        this.js_atencion2.setValue(20);
         this.t_cliente1.setValue(3);
         this.t_cliente2.setValue(10);
         this.llenarRangoTiempo();
@@ -79,9 +79,6 @@ public class interfaz extends javax.swing.JFrame {
         jLabelEspera2 = new javax.swing.JLabel();
         jLabelEspera3 = new javax.swing.JLabel();
         jLabelEspera4 = new javax.swing.JLabel();
-        jButtonAgregarProceso = new javax.swing.JButton();
-        jScrollPane1 = new javax.swing.JScrollPane();
-        jListProcesosFuera = new javax.swing.JList<>();
         jLabelAtencion3 = new javax.swing.JLabel();
         jLabelatencion1 = new javax.swing.JLabel();
         jLabelatencion2 = new javax.swing.JLabel();
@@ -158,20 +155,6 @@ public class interfaz extends javax.swing.JFrame {
 
         jLabelEspera4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imágenes/esperaa.png"))); // NOI18N
         jPanel1.add(jLabelEspera4, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 370, -1, -1));
-
-        jButtonAgregarProceso.setFont(new java.awt.Font("Tw Cen MT Condensed Extra Bold", 1, 12)); // NOI18N
-        jButtonAgregarProceso.setText("Agregar Proceso");
-        jButtonAgregarProceso.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButtonAgregarProcesoActionPerformed(evt);
-            }
-        });
-        jPanel1.add(jButtonAgregarProceso, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 40, -1, -1));
-
-        jListProcesosFuera.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        jScrollPane1.setViewportView(jListProcesosFuera);
-
-        jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 80, 110, 350));
 
         jLabelAtencion3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imágenes/buzz.png"))); // NOI18N
         jPanel1.add(jLabelAtencion3, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 220, -1, -1));
@@ -297,12 +280,6 @@ public class interfaz extends javax.swing.JFrame {
 
     
     
-    private void jButtonAgregarProcesoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonAgregarProcesoActionPerformed
-        // TODO add your handling code here:
-
-
-    }//GEN-LAST:event_jButtonAgregarProcesoActionPerformed
-
     
     
     
@@ -367,7 +344,6 @@ public class interfaz extends javax.swing.JFrame {
                         if (!modelo.isEmpty()) {
                             ocuparSilla(indexSillaVacia() + 1);
                             modelo.remove(0);
-                            jListProcesosFuera.setModel(modelo);
                             arrayEspera[x] = true;
                         }
 
@@ -445,7 +421,6 @@ public class interfaz extends javax.swing.JFrame {
                 } else {
                     // Colocar en línea de espera "afuera"
                     modelo.addElement("Cliente en espera");
-                    jListProcesosFuera.setModel(modelo);
                 }
             }
         }
@@ -846,7 +821,6 @@ public class interfaz extends javax.swing.JFrame {
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButtonAgregarProceso;
     private javax.swing.JLabel jLabeLacum1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel13;
@@ -880,10 +854,8 @@ public class interfaz extends javax.swing.JFrame {
     private javax.swing.JLabel jLabelestado2;
     private javax.swing.JLabel jLabelestado3;
     private javax.swing.JLabel jLabeltotal;
-    private javax.swing.JList<String> jListProcesosFuera;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
-    private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JSpinner js_atencion2;
     private javax.swing.JSpinner js_atencion3;
     private java.awt.Label label1;
