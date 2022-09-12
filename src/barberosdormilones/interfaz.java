@@ -53,15 +53,11 @@ public class interfaz extends javax.swing.JFrame {
         jLabelEspera3 = new javax.swing.JLabel();
         jLabelEspera4 = new javax.swing.JLabel();
         jButtonAgregarProceso = new javax.swing.JButton();
-        jLabel2 = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
-        jLabel5 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
         jListProcesosFuera = new javax.swing.JList<>();
         jLabelAtencion3 = new javax.swing.JLabel();
         jLabelatencion1 = new javax.swing.JLabel();
         jLabelatencion2 = new javax.swing.JLabel();
-        jLabel7 = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
         jLabeltotal = new javax.swing.JLabel();
         jLabel9 = new javax.swing.JLabel();
@@ -82,6 +78,8 @@ public class interfaz extends javax.swing.JFrame {
         jLabelEspera10 = new javax.swing.JLabel();
         js_atencion1 = new javax.swing.JSpinner();
         js_atencion2 = new javax.swing.JSpinner();
+        label1 = new java.awt.Label();
+        label2 = new java.awt.Label();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -89,44 +87,44 @@ public class interfaz extends javax.swing.JFrame {
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imágenes/barbero.png"))); // NOI18N
-        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 290, -1, -1));
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imágenes/sillas.png"))); // NOI18N
+        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 280, -1, 40));
 
-        jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imágenes/barbero.png"))); // NOI18N
-        jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 290, -1, -1));
+        jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imágenes/sillas.png"))); // NOI18N
+        jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 60, -1, 40));
 
-        jLabel6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imágenes/barbero.png"))); // NOI18N
-        jPanel1.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 290, -1, -1));
+        jLabel6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imágenes/sillas.png"))); // NOI18N
+        jPanel1.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 170, -1, 40));
 
-        jLabelBarberoS.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imágenes/peluquero (1).png"))); // NOI18N
-        jPanel1.add(jLabelBarberoS, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 360, -1, -1));
+        jLabelBarberoS.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imágenes/Barb.png"))); // NOI18N
+        jPanel1.add(jLabelBarberoS, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 10, -1, -1));
 
-        jLabelBarbero2S.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imágenes/peluquero (1).png"))); // NOI18N
-        jPanel1.add(jLabelBarbero2S, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 360, -1, -1));
+        jLabelBarbero2S.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imágenes/Barb.png"))); // NOI18N
+        jPanel1.add(jLabelBarbero2S, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 110, -1, -1));
 
-        jLabelBarbero3S.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imágenes/peluquero (1).png"))); // NOI18N
-        jPanel1.add(jLabelBarbero3S, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 360, -1, -1));
+        jLabelBarbero3S.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imágenes/Barb.png"))); // NOI18N
+        jPanel1.add(jLabelBarbero3S, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 220, -1, 80));
 
-        jLabelBarberoA.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imágenes/peluquero.png"))); // NOI18N
-        jPanel1.add(jLabelBarberoA, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 360, -1, -1));
+        jLabelBarberoA.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imágenes/Barb.png"))); // NOI18N
+        jPanel1.add(jLabelBarberoA, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 10, -1, -1));
 
-        jLabelBarbero2A.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imágenes/peluquero.png"))); // NOI18N
-        jPanel1.add(jLabelBarbero2A, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 360, -1, -1));
+        jLabelBarbero2A.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imágenes/Barb.png"))); // NOI18N
+        jPanel1.add(jLabelBarbero2A, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 220, -1, -1));
 
-        jLabelBarbero3A.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imágenes/peluquero.png"))); // NOI18N
-        jPanel1.add(jLabelBarbero3A, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 360, -1, -1));
+        jLabelBarbero3A.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imágenes/Barb.png"))); // NOI18N
+        jPanel1.add(jLabelBarbero3A, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 110, 80, 80));
 
-        jLabelEspera1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imágenes/pensando.png"))); // NOI18N
-        jPanel1.add(jLabelEspera1, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 110, -1, -1));
+        jLabelEspera1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imágenes/esperaa.png"))); // NOI18N
+        jPanel1.add(jLabelEspera1, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 370, -1, -1));
 
-        jLabelEspera2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imágenes/pensando.png"))); // NOI18N
-        jPanel1.add(jLabelEspera2, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 110, -1, -1));
+        jLabelEspera2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imágenes/esperaa.png"))); // NOI18N
+        jPanel1.add(jLabelEspera2, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 370, -1, -1));
 
-        jLabelEspera3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imágenes/pensando.png"))); // NOI18N
-        jPanel1.add(jLabelEspera3, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 110, -1, -1));
+        jLabelEspera3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imágenes/esperaa.png"))); // NOI18N
+        jPanel1.add(jLabelEspera3, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 370, -1, -1));
 
-        jLabelEspera4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imágenes/pensando.png"))); // NOI18N
-        jPanel1.add(jLabelEspera4, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 110, -1, -1));
+        jLabelEspera4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imágenes/esperaa.png"))); // NOI18N
+        jPanel1.add(jLabelEspera4, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 370, -1, -1));
 
         jButtonAgregarProceso.setFont(new java.awt.Font("Tw Cen MT Condensed Extra Bold", 1, 12)); // NOI18N
         jButtonAgregarProceso.setText("Agregar Proceso");
@@ -137,109 +135,101 @@ public class interfaz extends javax.swing.JFrame {
         });
         jPanel1.add(jButtonAgregarProceso, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 40, -1, -1));
 
-        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imágenes/peluqueria.png"))); // NOI18N
-        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 30, -1, -1));
-
-        jLabel3.setBackground(new java.awt.Color(255, 255, 255));
-        jLabel3.setFont(new java.awt.Font("Tw Cen MT Condensed Extra Bold", 1, 24)); // NOI18N
-        jLabel3.setText("Barberos Dormilones");
-        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 50, 220, 30));
-
-        jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imágenes/peluqueria.png"))); // NOI18N
-        jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 30, -1, -1));
-
         jListProcesosFuera.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         jScrollPane1.setViewportView(jListProcesosFuera);
 
         jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 80, 110, 350));
 
-        jLabelAtencion3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imágenes/avatar.png"))); // NOI18N
-        jPanel1.add(jLabelAtencion3, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 260, -1, -1));
+        jLabelAtencion3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imágenes/buzz.png"))); // NOI18N
+        jPanel1.add(jLabelAtencion3, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 220, -1, -1));
 
-        jLabelatencion1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imágenes/avatar.png"))); // NOI18N
-        jPanel1.add(jLabelatencion1, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 250, -1, -1));
+        jLabelatencion1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imágenes/buzz.png"))); // NOI18N
+        jPanel1.add(jLabelatencion1, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 10, 60, 60));
 
-        jLabelatencion2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imágenes/avatar.png"))); // NOI18N
-        jPanel1.add(jLabelatencion2, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 260, -1, -1));
+        jLabelatencion2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imágenes/buzz.png"))); // NOI18N
+        jPanel1.add(jLabelatencion2, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 110, -1, -1));
 
-        jLabel7.setFont(new java.awt.Font("Tw Cen MT Condensed Extra Bold", 0, 14)); // NOI18N
-        jLabel7.setText("ESTADO:");
-        jPanel1.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 440, 60, -1));
-
-        jPanel2.setBackground(new java.awt.Color(0, 153, 153));
+        jPanel2.setBackground(new java.awt.Color(0, 0, 0));
 
         jLabeltotal.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jLabeltotal.setForeground(new java.awt.Color(255, 255, 255));
         jPanel2.add(jLabeltotal);
 
-        jPanel1.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 50, 130, 30));
+        jPanel1.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 30, 130, 30));
 
         jLabel9.setFont(new java.awt.Font("Tw Cen MT Condensed Extra Bold", 0, 14)); // NOI18N
         jLabel9.setText("TOTAL DE CORTES");
-        jPanel1.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 30, 110, -1));
+        jPanel1.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 110, -1));
 
         jLabelestado1.setFont(new java.awt.Font("Tw Cen MT Condensed Extra Bold", 0, 14)); // NOI18N
-        jPanel1.add(jLabelestado1, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 440, -1, -1));
+        jPanel1.add(jLabelestado1, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 90, 70, 20));
 
         jLabelestado2.setFont(new java.awt.Font("Tw Cen MT Condensed Extra Bold", 0, 14)); // NOI18N
-        jPanel1.add(jLabelestado2, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 440, -1, -1));
+        jPanel1.add(jLabelestado2, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 190, 70, 20));
 
         jLabelestado3.setFont(new java.awt.Font("Tw Cen MT Condensed Extra Bold", 0, 14)); // NOI18N
-        jPanel1.add(jLabelestado3, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 440, -1, -1));
+        jPanel1.add(jLabelestado3, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 300, 80, 20));
 
         jLabel13.setFont(new java.awt.Font("Tw Cen MT Condensed Extra Bold", 0, 12)); // NOI18N
         jLabel13.setText("BARBERO 1:");
-        jPanel1.add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 110, 60, 20));
+        jPanel1.add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 10, 60, 20));
 
         jLabel14.setFont(new java.awt.Font("Tw Cen MT Condensed Extra Bold", 0, 12)); // NOI18N
         jLabel14.setText("BARBERO 2:");
         jLabel14.setToolTipText("");
-        jPanel1.add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 140, -1, -1));
+        jPanel1.add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 120, -1, -1));
 
         jLabel15.setFont(new java.awt.Font("Tw Cen MT Condensed Extra Bold", 0, 12)); // NOI18N
         jLabel15.setText("BARBERO 3:");
-        jPanel1.add(jLabel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 170, 60, 20));
+        jPanel1.add(jLabel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 220, 60, 20));
 
         jLabeLacum1.setFont(new java.awt.Font("Tw Cen MT Condensed Extra Bold", 0, 12)); // NOI18N
-        jPanel1.add(jLabeLacum1, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 110, 130, 20));
+        jPanel1.add(jLabeLacum1, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 30, 130, 20));
 
         jLabelacum2.setFont(new java.awt.Font("Tw Cen MT Condensed Extra Bold", 0, 12)); // NOI18N
-        jPanel1.add(jLabelacum2, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 140, 130, 20));
+        jPanel1.add(jLabelacum2, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 140, 130, 20));
 
         jLabelacum3.setFont(new java.awt.Font("Tw Cen MT Condensed Extra Bold", 0, 12)); // NOI18N
-        jPanel1.add(jLabelacum3, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 170, 130, 20));
+        jPanel1.add(jLabelacum3, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 240, 130, 20));
 
-        jLabelEspera5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imágenes/pensando.png"))); // NOI18N
-        jPanel1.add(jLabelEspera5, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 110, -1, -1));
+        jLabelEspera5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imágenes/esperaa.png"))); // NOI18N
+        jPanel1.add(jLabelEspera5, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 370, -1, -1));
 
-        jLabelEspera6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imágenes/pensando.png"))); // NOI18N
-        jPanel1.add(jLabelEspera6, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 180, -1, -1));
+        jLabelEspera6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imágenes/esperaa.png"))); // NOI18N
+        jPanel1.add(jLabelEspera6, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 440, -1, -1));
 
-        jLabelEspera7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imágenes/pensando.png"))); // NOI18N
-        jPanel1.add(jLabelEspera7, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 180, -1, -1));
+        jLabelEspera7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imágenes/esperaa.png"))); // NOI18N
+        jPanel1.add(jLabelEspera7, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 440, -1, -1));
 
-        jLabelEspera8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imágenes/pensando.png"))); // NOI18N
-        jPanel1.add(jLabelEspera8, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 180, -1, -1));
+        jLabelEspera8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imágenes/esperaa.png"))); // NOI18N
+        jPanel1.add(jLabelEspera8, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 440, -1, -1));
 
-        jLabelEspera9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imágenes/pensando.png"))); // NOI18N
-        jPanel1.add(jLabelEspera9, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 180, -1, -1));
+        jLabelEspera9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imágenes/esperaa.png"))); // NOI18N
+        jPanel1.add(jLabelEspera9, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 440, -1, -1));
 
-        jLabelEspera10.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imágenes/pensando.png"))); // NOI18N
-        jPanel1.add(jLabelEspera10, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 180, -1, -1));
+        jLabelEspera10.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imágenes/esperaa.png"))); // NOI18N
+        jPanel1.add(jLabelEspera10, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 440, -1, -1));
 
         js_atencion1.addChangeListener(new javax.swing.event.ChangeListener() {
             public void stateChanged(javax.swing.event.ChangeEvent evt) {
                 js_atencion1StateChanged(evt);
             }
         });
-        jPanel1.add(js_atencion1, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 480, 90, 20));
+        jPanel1.add(js_atencion1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 150, 50, 20));
 
         js_atencion2.addChangeListener(new javax.swing.event.ChangeListener() {
             public void stateChanged(javax.swing.event.ChangeEvent evt) {
                 js_atencion2StateChanged(evt);
             }
         });
-        jPanel1.add(js_atencion2, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 480, 90, 20));
+        jPanel1.add(js_atencion2, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 150, 50, 20));
+
+        label1.setFont(new java.awt.Font("Dubai", 0, 18)); // NOI18N
+        label1.setText("Sala de Espera");
+        jPanel1.add(label1, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 340, 130, 30));
+
+        label2.setText("Rango del corte de pelo");
+        jPanel1.add(label2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 120, -1, -1));
 
         getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 760, 520));
 
@@ -776,12 +766,8 @@ public class interfaz extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel14;
     private javax.swing.JLabel jLabel15;
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
-    private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JLabel jLabelAtencion3;
     private javax.swing.JLabel jLabelBarbero2A;
@@ -814,5 +800,7 @@ public class interfaz extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JSpinner js_atencion1;
     private javax.swing.JSpinner js_atencion2;
+    private java.awt.Label label1;
+    private java.awt.Label label2;
     // End of variables declaration//GEN-END:variables
 }
